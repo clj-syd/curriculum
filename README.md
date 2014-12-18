@@ -22,7 +22,7 @@ Supporting Materials
 --------------------
 * [Student Cheatsheet](outline/cheatsheet.md)
 * [Slides](http://clojurebridge.github.io/curriculum)
-* [Old global-growth web app](https://github.com/ClojureBridge/global-growth/blob/master/README.md)
+* [Old global-growth web app](https://github.com/ClojureBridge/global-growth/)
 
 License
 -------
