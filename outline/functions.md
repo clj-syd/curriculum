@@ -17,8 +17,9 @@ A _function_ is an independent, discrete piece of code that takes in some values
 (defn total-bill
   "Given subtotal of bill, return total after tax."
   [subtotal]
-  (* 1.08 subtotal))
+  (* 1.10 subtotal))
 ```
+(Note that in Australia GST is 10% - and all prices are technically required to be displayed *including* GST - for the purpose of this exercise, we're going to pretend that it is not). 
 
 In this code:
 
@@ -26,14 +27,14 @@ In this code:
 * `total-bill` is the name of this function.
 * The string on the next line is the documentation for the function, which explains what the function does. This is optional.
 * `[subtotal]` is the list of arguments. Here, we have one argument called `subtotal`.
-* `(* 1.08 subtotal)` is the _body_ of the function. This is what executes when we use the function.
+* `(* 1.10 subtotal)` is the _body_ of the function. This is what executes when we use the function.
 
 To use `total-bill`, we _call_ the function, just like we've done with all the functions we've already used.
 
 ```clj
-(total-bill 8.5)  ;=> 9.18
-(total-bill 50)   ;=> 54.0
-(total-bill 50/6) ;=> 9.0
+(total-bill 8.5)  ;=> 9.350000000000001
+(total-bill 50)   ;=> 55.00000000000001
+(total-bill 50/6) ;=> 9.166666666666666
 ```
 
 Functions can also take more than one argument. Let's make a `total-with-tip` function that additionally takes a tip percentage and calculates the total amount paid:
@@ -42,10 +43,10 @@ Functions can also take more than one argument. Let's make a `total-with-tip` fu
 (defn total-with-tip
   "Given subtotal, return total after tax and tip."
   [subtotal tip-pct]
-  (* 1.08 subtotal (+ 1 tip-pct)))
+  (* 1.10 subtotal (+ 1 tip-pct)))
 
-(total-with-tip 12.50 0.18) ;=> 15.93
-(total-with-tip 50 0.18)    ;=> 63.72
+(total-with-tip 12.50 0.18) ;=> 16.225
+(total-with-tip 50 0.18)    ;=> 64.9
 ```
 
 ### EXERCISE: Find per-person share of bill among a group
@@ -92,8 +93,8 @@ One of the most magical things about Clojure--and many other programming languag
 (def dine-in-orders [12.50 20 21 16 18.40])
 (def take-out-orders [6.00 6.00 7.95 6.25])
 
-(map total-bill dine-in-orders)  ;=> [13.5 21.6 22.68 17.28 19.872]
-(map total-bill take-out-orders) ;=> [6.48 6.48 8.586 6.75]
+(map total-bill dine-in-orders)  ;=> (13.750000000000002 22.0 23.1 17.6 20.24)
+(map total-bill take-out-orders) ;=> (6.6000000000000005 6.6000000000000005 8.745000000000001 6.875000000000001)
 ```
 
 `map` is a function that takes another function, along with a collection. It calls the function provided to it on each member of the collection, then returns a new collection with the results of those function calls. This is a weird concept, but it is at the core of Clojure and functional programming in general.
