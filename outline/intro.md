@@ -184,7 +184,7 @@ Look at the last line, and see how we can use symbols by themselves to refer to 
 
 ### EXERCISE: Basic arithmetic
 
-Take your height in feet and inches and convert it to inches using arithmetic in Clojure.
+Take your height in feet and inches and convert it to inches using arithmetic in Clojure. (For those of you that grew up metric-only, there are 12 inches in a foot). 
 
 Then convert that to centimeters. There are 2.54 centimeters in an inch.
 
