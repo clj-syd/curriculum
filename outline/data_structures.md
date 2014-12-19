@@ -64,3 +64,6 @@ Now, take a look at the last three functions. `count` does what you'd expect: it
 ### EXERCISE: Make a vector
 
 Make a vector of the high temperatures for the next 7 days in the town where you live. Then use the `nth` function to get the high temperature for next Tuesday.
+
+For Sydney you [can look at this](http://www.timeanddate.com/weather/australia/sydney/historic). 
+
